@@ -1,0 +1,1 @@
+This project is used to evaluate JetBrains Clion IDE for C++ projects.
