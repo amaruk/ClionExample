@@ -20,6 +20,6 @@ include_directories( ${HEADER_PATH} )
 find_package (MyLib)
 
 # Build target: executable binary
-add_executable(MyExe Sources/main.cpp)
+add_executable(MyExe Sources/MyExe.cpp)
 # Link an executable to a library
 target_link_libraries (MyExe MyLib)

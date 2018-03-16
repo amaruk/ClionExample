@@ -31,9 +31,10 @@
 *.out
 *.app
 
-# IDE configuration
+# JetBrains configuration
 .idea
 cmake-build-*
 
-# Visual Studio
+# VisualStudio configuration
 .vs
+CMakeBuilds

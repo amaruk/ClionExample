@@ -1,4 +1,4 @@
-#include "main.h"
+#include "MyExe.h"
 #include "MyLib.h"
 
 int main() {
