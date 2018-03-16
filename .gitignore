@@ -34,3 +34,6 @@
 # IDE configuration
 .idea
 cmake-build-*
+
+# Visual Studio
+.vs
