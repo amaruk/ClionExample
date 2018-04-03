@@ -1,3 +1,11 @@
 language: cpp
+
 compiler:
   - gcc
+
+before_script:
+  - mkdir travis_build
+  - cd travis_build
+  - cmake ..
+
+script: make && make test
