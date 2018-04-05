@@ -1,0 +1,4 @@
+// the configured options and settings for ProjExe
+#define PROJ_EXE_VERSION_MAJOR @PROJ_EXE_VERSION_MAJOR@
+#define PROJ_EXE_VERSION_MINOR @PROJ_EXE_VERSION_MINOR@
+#cmakedefine USE_DUMMY_LIB
