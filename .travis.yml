@@ -6,6 +6,6 @@ compiler:
 before_script:
   - mkdir travis_build
   - cd travis_build
-  - cmake ..
+  - cmake ../Solution
 
 script: make

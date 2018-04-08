@@ -1,9 +1,4 @@
-//
-// Created by Amaruk on 2/18/2018.
-//
-
-#ifndef CLIONEXAMPLE_MAIN_H
-#define CLIONEXAMPLE_MAIN_H
+#pragma once
 
 #include <iostream>
 #include "version.h"
@@ -15,4 +10,3 @@ public:
     ~ClassInExe() = default;
 };
 
-#endif //CLIONEXAMPLE_MAIN_H
