@@ -8,11 +8,7 @@ before_script:
   - cd travis_build_thirdparty
   - cmake ../ThirdParty
   - cmake --build .
-  - ls -l
-  - cp libThirdParty.a ../ThirdParty/lib
-  - ls -l ../ThirdParty/lib
-  - cd ../ThirdParty/lib
-  - ls -l
+  - cp libThirdParty.a ../ThirdParty/lib/
   - cd ..
   - mkdir travis_build_solution
   - cd travis_build_solution
