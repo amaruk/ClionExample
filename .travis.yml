@@ -11,6 +11,8 @@ before_script:
   - ls -l
   - cp libThirdParty.a ../ThirdParty/lib
   - ls -l ../ThirdParty/lib
+  - cd ../ThirdParty/lib
+  - ls -l
   - cd ..
   - mkdir travis_build_solution
   - cd travis_build_solution
