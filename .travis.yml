@@ -4,8 +4,14 @@ compiler:
   - gcc
 
 before_script:
-  - mkdir travis_build
-  - cd travis_build
+  - mkdir travis_build_thirdparty
+  - cd travis_build_thirdparty
+  - cmake ../ThirdParty
+  - cmake --build .
+  - cp libThirdParty.a ../ThirdParty/lib
+  - cd ..
+  - mkdir travis_build_solution
+  - cd travis_build_solution
   - cmake ../Solution
 
 script: make
