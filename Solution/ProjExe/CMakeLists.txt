@@ -55,6 +55,18 @@ if (USE_DUMMY_LIB)
   set (EXTRA_LIBS ${EXTRA_LIBS} MyLibDummy)
 endif (USE_DUMMY_LIB)
 
+# Add definition
+option (DEBUG_OUTPUT "Enable debug print?" ON)
+if (DEBUG_OUTPUT)
+  add_definitions (-DDEBUG_OUTPUT)
+endif ()
+# A more finer level of granularity
+# Without APPEND means replace definitions
+set_property (DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS DIR_LEVEL_DEF=1)
+set_property (TARGET MyLib APPEND PROPERTY COMPILE_DEFINITIONS TAR_LEVEL_DEF=2)
+set_property (SOURCE MyExe.cpp APPEND PROPERTY COMPILE_DEFINITIONS SRC_LEVEL_DEF=3)
+# Suggested to create a header file with all definitions.
+
 # Build target: executable binary
 add_executable (MyExe ${PROJEXE_SOURCE_DIR}/MyExe.cpp)
 # Link an executable to a library
