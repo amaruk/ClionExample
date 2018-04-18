@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.9)
 
-include("../CMakeGlobalSettings.cmake")
+set(CMAKE_CXX_STANDARD 17)
 
 project (ProjLib)
+
+message ("!!!!!!PROJECT_BINARY_DIR: ${ROJECT_BINARY_DIR}")
+message ("!!!!!!PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 
 # Set additional compiler-related settings
 #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")

@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.9)
 
-include("../CMakeGlobalSettings.cmake")
+set(CMAKE_CXX_STANDARD 17)
 
 project (ProjExe)
+
+message ("!!!!!!PROJECT_BINARY_DIR: ${ROJECT_BINARY_DIR}")
+message ("!!!!!!PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 
 # Set additional compiler-related settings
 #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
@@ -15,8 +18,6 @@ set (PROJEXE_CONFIGURE_DIR "Configure")
 set (PROJEXE_HEADER_DIR "Headers")
 set (PROJEXE_SOURCE_DIR "Sources")
 set (PROJLIB_HEADER_DIR "../ProjLib/Headers")
-set (THIRDPARTY_HEADER_DIR "../../ThirdParty/include")
-set (THIRDPARTY_LIB_DIR "../../ThirdParty/lib")
 # configure a header file to pass some of the CMake settings
 # to the source code in the generated project folder
 configure_file (
@@ -71,3 +72,4 @@ set_property (SOURCE MyExe.cpp APPEND PROPERTY COMPILE_DEFINITIONS SRC_LEVEL_DEF
 add_executable (MyExe ${PROJEXE_SOURCE_DIR}/MyExe.cpp)
 # Link an executable to a library
 target_link_libraries (MyExe MyLib ${EXTRA_LIBS})
+

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 
-include("CMakeGlobalSettings.cmake")
+set(CMAKE_CXX_STANDARD 17)
 
 # Conditional statement
 # Available keywords:
@@ -54,6 +54,10 @@ macro_name ("Hello, macro.")
 # Cache entry with options
 set (cache_entry_options "Items" CACHE STRING "Select an item.")
 set_property (CACHE cache_entry_options PROPERTY STRINGS "A" "B" "C")
+
+# Global paths
+message ("!!!!!!PROJECT_BINARY_DIR: ${ROJECT_BINARY_DIR}")
+message ("!!!!!!PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 
 # Include sub-projects into the main project.
 add_subdirectory (ProjLib)
