@@ -2,6 +2,15 @@ cmake_minimum_required(VERSION 3.9)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# Different message levels
+message ("NONE MESSAGE") # Important information
+message (STATUS "STATUS MESSAGE") # Incidental information
+message (WARNING "WARNING MESSAGE") # Warning, continue processing
+message (AUTHOR_WARNING "AUTHOR_WARNING MESSAGE") # Warning (dev), continue processing
+#message (SEND_ERROR "SEND_ERROR MESSAGE") # Error, continue processing, but skip generation
+#message (FATAL_ERROR "FATAL_ERROR MESSAGE") # Error, stop processing and generation
+message (DEPRECATION "DEPRECATION MESSAGE") # Deprecation Error or Warning if variable CMAKE_ERROR_DEPRECATED or CMAKE_WARN_DEPRECATED is enabled, respectively, else no message.
+
 # Conditional statement
 # Available keywords:
 # NOT, AND, OR, 
@@ -15,13 +24,31 @@ set(CMAKE_CXX_STANDARD 17)
 # file1 IS_NEWER_THAN file2
 # variable MATCHES regex
 # string MATCHES regex
-if (MSVC80)
-  message("!!!MSVC80")
-elseif (MSVC90)
-  message("!!!MSVC90")
-else (MSVC80)
-  message("!!!Very new MSVC")
-endif (MSVC80)
+if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+  message ("64-bit ")
+else (CMAKE_SIZEOF_VOID_P EQUAL 4)
+  message ("32-bit ")
+endif ()
+if (MSVC)
+  message ("MSVC ")
+  if (MSVC_VERSION EQUAL 1400)
+    message ("8.0 VS2005")
+  elseif (MSVC_VERSION EQUAL 1500)
+    message ("9.0 VS2008")
+  elseif (MSVC_VERSION EQUAL 1600)
+    message ("10.0 VS2010")
+  elseif (MSVC_VERSION EQUAL 1700)
+    message ("11.0 VS2012")
+  elseif (MSVC_VERSION EQUAL 1800)
+    message ("12.0 VS2013")
+  elseif (MSVC_VERSION EQUAL 1900)
+    message ("14.0 VS2015")
+  elseif (MSVC_VERSION GREATER_EQUAL 1910 AND MSVC_VERSION LESS_EQUAL 1919)
+    message ("15.0 VS2017")
+  else ()
+    message ("Unknown ${MSVC_VERSION}")
+  endif ()
+endif ()
 
 # Looping construct: foreach
 set (multi_element_var A B C)
